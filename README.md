@@ -8,11 +8,11 @@ By leveraging AWS IoT Core’s Fleet Provisioning, Device Shadow, and Remote Man
 
 ## 🔥 Key Features
 
--  AWS IoT Fleet Provisioning (Automatic Thing registration)
--  AWS IoT Device Shadow integration (State reporting and remote control)
--  Modular ROS 2 Node architecture
--  SaaS-ready fleet management system integration
--  Future support for AWS IoT Jobs and OTA updates
+- AWS IoT Fleet Provisioning (Automatic Thing registration)
+- AWS IoT Device Shadow integration (State reporting and remote control)
+- Modular ROS 2 Node architecture
+- SaaS-ready fleet management system integration
+- Future support for AWS IoT Jobs and OTA updates
 
 ---
 
@@ -134,13 +134,13 @@ ros2 launch ros2_aws_iot_fleet_agent_pkg device_shadow.launch.py
 
 ## 📌 Future Roadmap
 
-- ✅ AWS IoT Jobs integration (Remote command & deployment management)
-- ✅ OTA update examples
-- ✅ SaaS platform SDK and API integration
-- ✅ WebUI-based real-time monitoring dashboard
-- ✅ Remote fault analysis and cloud logging integration
-- ✅ Multi-device fleet management support
-- ✅ Enhanced security (X.509 / PKI-based authentication)
+- AWS IoT Jobs integration (Remote command & deployment management)
+- OTA update examples
+- SaaS platform SDK and API integration
+- WebUI-based real-time monitoring dashboard
+- Remote fault analysis and cloud logging integration
+- Multi-device fleet management support
+- Enhanced security (X.509 / PKI-based authentication)
 
 ---
 
