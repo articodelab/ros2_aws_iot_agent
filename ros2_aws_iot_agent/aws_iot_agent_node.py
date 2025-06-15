@@ -1,4 +1,5 @@
 import os
+import json
 import rclpy
 import subprocess
 from rclpy.node import Node
@@ -12,13 +13,30 @@ class AwsIotAgentNode(Node):
 
     def check_and_launch(self):
         self.timer.cancel()
-        has_cert = any(f.endswith("-register.json") for f in os.listdir(CERT_DIR))
-        if has_cert:
-            subprocess.Popen(["ros2", "run", "ros2_aws_iot_agent", "device_shadow_node"])
-        else:
-            subprocess.run(["ros2", "run", "ros2_aws_iot_agent", "fleet_provisioner_node"], check=True)
-            subprocess.Popen(["ros2", "run", "ros2_aws_iot_agent", "device_shadow_node"])
 
+        register_file = "roszen-register.json"
+        register_file_path = os.path.join(CERT_DIR, register_file)
+
+        if not os.path.exists(register_file_path):
+            self.get_logger().info("No register file found. Running FleetProvisioner.")
+            subprocess.run([
+                "ros2", "run", "ros2_aws_iot_agent", "fleet_provisioner_node"
+            ], check=True)
+
+        self.get_logger().info(f"Found register file: {register_file_path}")
+        with open(register_file_path, 'r') as f:
+            data = json.load(f)
+
+        thing_name = data.get("thing_name")
+        if not thing_name:
+            self.get_logger().error("thing_name not found in register file.")
+            return
+
+        subprocess.Popen([
+            "ros2", "run", "ros2_aws_iot_agent", "device_shadow_node",
+            "--ros-args", "-p", f"thing_name:={thing_name}"
+        ])
+ 
 
 def main(args=None):
     rclpy.init(args=args)

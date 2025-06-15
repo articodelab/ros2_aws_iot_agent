@@ -19,10 +19,10 @@ class DeviceShadowNode(Node):
         )
 
         # AWS IoT device shadow
-        self.declare_parameter("thing_name", f"roszen-6aad9714")
+        self.declare_parameter("thing_name", "")
         self.declare_parameter("endpoint", "a1m0q9qwr15z0y-ats.iot.ap-northeast-2.amazonaws.com")
-        self.declare_parameter("cert", "src/ros2_aws_iot_agent/resource/certs/roszen-6aad9714-certificate.pem.crt")
-        self.declare_parameter("key", "src/ros2_aws_iot_agent/resource/certs/roszen-6aad9714-private.pem.key")
+        self.declare_parameter("cert", "src/ros2_aws_iot_agent/resource/certs/roszen-certificate.pem.crt")
+        self.declare_parameter("key", "src/ros2_aws_iot_agent/resource/certs/roszen-private.pem.key")
         self.declare_parameter("ca", "src/ros2_aws_iot_agent/resource/certs/AmazonRootCA1.pem")
 
         thing_name = self.get_parameter("thing_name").get_parameter_value().string_value

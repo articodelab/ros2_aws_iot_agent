@@ -86,9 +86,9 @@ class FleetProvisionerNode(Node):
     def save_credentials(self, result: FleetProvisioningResult):
         os.makedirs("src/ros2_aws_iot_agent/resource/certs", exist_ok=True)
 
-        cert_file = f"src/ros2_aws_iot_agent/resource/certs/{result.thing_name}-certificate.pem.crt"
-        key_file = f"src/ros2_aws_iot_agent/resource/certs/{result.thing_name}-private.pem.key"
-        info_file = f"src/ros2_aws_iot_agent/resource/certs/{result.thing_name}-register.json"
+        cert_file = f"src/ros2_aws_iot_agent/resource/certs/roszen-certificate.pem.crt"
+        key_file = f"src/ros2_aws_iot_agent/resource/certs/roszen-private.pem.key"
+        info_file = f"src/ros2_aws_iot_agent/resource/certs/roszen-register.json"
 
         with open(cert_file, "w") as f:
             f.write(result.certificate_pem)
