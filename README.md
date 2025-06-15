@@ -1,5 +1,5 @@
 
-# ros2_aws_iot_fleet_agent
+# ros2_aws_iot_agent
 
 An open-source ROS 2 agent that integrates ROS 2-based devices and robots with AWS IoT for remote management and monitoring.  
 By leveraging AWS IoT Core’s Fleet Provisioning, Device Shadow, and Remote Management features, this agent enables efficient remote monitoring and maintenance of ROS 2 devices and distributed robotic systems.
@@ -94,13 +94,13 @@ export SERIAL_NUMBER="device-001"
 **Run Fleet Provisioning Node**
 
 ```bash
-ros2 launch ros2_aws_iot_fleet_agent_pkg fleet_provisioner.launch.py
+ros2 launch ros2_aws_iot_agent fleet_provisioner.launch.py
 ```
 
 **Run Device Shadow Node**
 
 ```bash
-ros2 launch ros2_aws_iot_fleet_agent_pkg device_shadow.launch.py
+ros2 launch ros2_aws_iot_agent_pkg device_shadow.launch.py
 ```
 
 *You can also pass parameters via the launch file.*
@@ -121,7 +121,7 @@ ros2 launch ros2_aws_iot_fleet_agent_pkg device_shadow.launch.py
      +------------+-----------+------------+--------------+
                          │
             +------------▼------------+
-            |   ros2_aws_iot_fleet_agent (Edge Device)  |
+            |   ros2_aws_iot_agent (Edge Device)  |
             +--------------------------+
             | FleetProvisionerNode     |
             | DeviceShadowNode         |
