@@ -8,11 +8,11 @@ By leveraging AWS IoT Core’s Fleet Provisioning, Device Shadow, and Remote Man
 
 ## 🔥 Key Features
 
-- ✅ AWS IoT Fleet Provisioning (Automatic Thing registration)
-- ✅ AWS IoT Device Shadow integration (State reporting and remote control)
-- ✅ Modular ROS 2 Node architecture
-- ✅ SaaS-ready fleet management system integration
-- ✅ Future support for AWS IoT Jobs and OTA updates
+-  AWS IoT Fleet Provisioning (Automatic Thing registration)
+-  AWS IoT Device Shadow integration (State reporting and remote control)
+-  Modular ROS 2 Node architecture
+-  SaaS-ready fleet management system integration
+-  Future support for AWS IoT Jobs and OTA updates
 
 ---
 
