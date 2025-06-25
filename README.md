@@ -1,5 +1,5 @@
 
-# ros2_aws_iot_agent
+# ros2-aws-iot-agent
 
 An open-source ROS 2 agent that integrates ROS 2-based devices and robots with AWS IoT for remote management and monitoring.  
 By leveraging AWS IoT Core’s Fleet Provisioning, Device Shadow, and Remote Management features, this agent enables efficient remote monitoring and maintenance of ROS 2 devices and distributed robotic systems.
